@@ -50,14 +50,27 @@ class Program {
                 int.Parse(data[5])
             ));
         }
-
+        //1. feladat
+        Console.WriteLine("Első feladat:");
         Console.WriteLine("1) Célba ért pilóták száma: " + pilots.Count);
+        Console.WriteLine();
+        //2. feladat
+        Console.WriteLine("Második feladat:");
         Console.WriteLine("2) Összes kiosztott világbajnoki pont: " + pilots.Sum(p => p.Points));
+        Console.WriteLine();
+        //3. feladat
+        Console.WriteLine("Harmadik feladat:");
         Console.WriteLine("3) Német versenyzők száma: " + pilots.Count(p => p.Nationality == "germany"));
+        Console.WriteLine();
+        //4. feladat
+        Console.WriteLine("Negyedik feladat:");
         Console.WriteLine("4) Pontot szerző csapatok: " + string.Join(", ", pilots.Where(p => p.Points > 0).Select(p => p.Team).Distinct()));
-
+        Console.WriteLine();
+        //5. feladat
+        Console.WriteLine("Ötödik feladat:");
         var bestPilot = pilots.OrderBy(p => p.Time).First();
         Console.WriteLine($"5) Legjobb versenyidőt elérő pilóta: {bestPilot.Name} - {bestPilot.Time}");
+        Console.WriteLine();
         Console.ReadKey();
     }
 }
